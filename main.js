@@ -2,7 +2,7 @@ let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 
 menuIcon.onclick = () => {
-  menuIcon.classList.toggle("fa - xmark");
+  menuIcon.classList.toggle("fa-xmark");
   navbar.classList.toggle("active");
 };
 
@@ -17,7 +17,7 @@ window.onscroll = () => {
     let id = sec.getAttribute("id");
 
     if (top >= offset && top < offset + height) {
-      navLinks.forEach.apply((links) => {
+      navLinks.forEach((links) => {
         links.classList.remove("active");
         document
           .querySelector("header nav a[href* = " + id + "]")
@@ -30,7 +30,7 @@ window.onscroll = () => {
 let header = document.querySelector("header");
 header.classList.toggle("sticky", window.scrollY > 100);
 
-menuIcon.classList.remove("fa - xmark");
+menuIcon.classList.remove("fa-xmark");
 navbar.classList.remove("active");
 
 ScrollReveal({
@@ -39,7 +39,7 @@ ScrollReveal({
   delay: "200",
 });
 
-ScrollReveal().reveal(".home-contend,heading", { origin: "top" });
+ScrollReveal().reveal(".home-content,heading", { origin: "top" });
 ScrollReveal().reveal(
   ".home-img,.services-container,.portfolio-box,.contact form ",
   { origin: "bottom" }
@@ -48,7 +48,7 @@ ScrollReveal().reveal(".home-contact h1,.about-img", { origin: "left" });
 ScrollReveal().reveal(".home-contact p,.about-contend", { origin: "right" });
 
 const type = new Typed(".multiple-text", {
-  Strings: ["Frondend Developer", "Backend Developer", "Web Designer"],
+  strings: ["Frondend Developer", "Backend Developer", "Web Designer"],
   typeSpeed: 70,
   backSpeed: 70,
   backDelay: 1000,
