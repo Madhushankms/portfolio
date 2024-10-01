@@ -54,3 +54,15 @@ const type = new Typed(".multiple-text", {
   backDelay: 1000,
   loop: true,
 });
+
+function sendMail() {
+  let parms = {
+    name: document.getElementById("name").value,
+    subject: document.getElementById("subject").value,
+    message: document.getElementById("email").value,
+  };
+
+  emailjs
+    .send("service_tp9fh6s", "template_3sfb3fh", parms)
+    .then(alert("Email Sent"));
+}

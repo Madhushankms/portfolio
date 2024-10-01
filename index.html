@@ -14,6 +14,18 @@
     <!-- main css -->
     <link rel="stylesheet" href="./style.css" />
     <title>Malinda</title>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "-3Cwz1iBysg8caVj-",
+        });
+      })();
+    </script>
   </head>
   <body>
     <!-- Header -->
@@ -49,11 +61,12 @@
             ><i class="fa-brands fa-github"></i
           ></a>
         </div>
-        <a href="#" class="btn">Download CV</a>
+        <a href="./Malinda CV.pdf" download class="btn">Download CV</a>
       </div>
-      <div class="home-img">
+      <!-- home page animate image -->
+      <!-- <div class="home-img">
         <img src="./picts/crop.png" alt="myImage" />
-      </div>
+      </div> -->
     </section>
 
     <!-- About section -->
@@ -122,7 +135,7 @@
         <div class="portfolio-box">
           <img src="./xpress.jpg " alt="port" />
           <div class="portfolio-layer">
-            <h4>Web Development & Mobile</h4>
+            <h4>Xpress</h4>
             <p>
               This system manages personal courier services, improving
               communication and trust issues with external providers. It
@@ -135,7 +148,7 @@
         <div class="portfolio-box">
           <img src="./water.jpg" alt="port" />
           <div class="portfolio-layer">
-            <h4>Arduino Mega</h4>
+            <h4>Oil Dispenser</h4>
             <p>
               Developed an automated oil dispenser system to optimize oil
               distribution in industrial and commercial settings, reducing
@@ -148,11 +161,11 @@
         <div class="portfolio-box">
           <img src="./cricket.jpg" alt="port" />
           <div class="portfolio-layer">
-            <h4>Web Development</h4>
+            <h4>Cricket Info</h4>
             <p>
               Developed a Cricket Info Management System to store and manage
               member details, enabling easy search and retrieval of student
-              information, including cricket pass details
+              information, including cricket pass details.(Web Application)
             </p>
             <i class="fa-solid fa-up-right-from-square"></i>
           </div>
@@ -165,12 +178,12 @@
       <h2 class="heading">Contact <span>Me</span></h2>
       <form action="#">
         <div class="input-box">
-          <input type="text" placeholder="Full Name" />
-          <input type="text" placeholder="Email Address" />
+          <input type="text" id="name" placeholder="Full Name" />
+          <input type="text" id="email" placeholder="Email Address" />
         </div>
         <div class="input-box">
           <input type="number" placeholder="Mobile Number" />
-          <input type="text" placeholder="Email Subject" />
+          <input type="text" id="subject" placeholder="Email Subject" />
         </div>
         <textarea
           name=""
@@ -179,7 +192,12 @@
           rows="10"
           placeholder="your Message"
         ></textarea>
-        <input type="submit" value="Send Message" class="btn" />
+        <input
+          type="submit"
+          onclick="sendMail()"
+          value="Send Message"
+          class="btn"
+        />
       </form>
     </section>
     <!-- Footer section -->
